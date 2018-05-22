@@ -1,0 +1,5 @@
+git+git://github.com/flavioribeiro/mintapi
+selenium-requests
+git+git://github.com/Jamonek/Robinhood
+python-dateutil
+lxml
