@@ -5,7 +5,7 @@ import mintapi
 from lxml import html
 
 MINT_OVERVIEW_URL = 'https://mint.intuit.com/overview.event'
-PROPERTY_ACCOUNT_URL_FORMAT = 'https://mint.intuit.com/mas/v1/providers/PFM:{}_{}/accounts/PFM:OtherPropertyAccount:{}_{}'
+PROPERTY_URL_FORMAT = 'https://mint.intuit.com/mas/v1/providers/PFM:{}_{}/accounts/PFM:OtherPropertyAccount:{}_{}'
 
 class Mint(mintapi.Mint):
     browser_auth_api_key = None
@@ -24,7 +24,7 @@ class Mint(mintapi.Mint):
     def set_property_account_value(self, account, value):
         account_id = account['accountId']
         account_login_id = account['fiLoginId']
-        account_update_url = PROPERTY_ACCOUNT_URL_FORMAT.format(self.mint_user_id, account_login_id, self.mint_user_id, account_id)
+        account_update_url = PROPERTY_URL_FORMAT.format(self.mint_user_id, account_login_id, self.mint_user_id, account_id)
 
         result = self.patch(account_update_url,
                 json={
