@@ -3,4 +3,4 @@ selenium-requests
 git+git://github.com/Jamonek/Robinhood
 python-dateutil
 lxml
-requests
+requests==2.18.4
